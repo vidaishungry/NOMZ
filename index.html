@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOMZ - Homepage</title>
+  <!-- Link to Adobe Fonts -->
+  <link rel="stylesheet" href="https://use.typekit.net/cto0qog.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #EADDCA;
+      font-family: "bubblegum-pop-highlight", sans-serif;
+      font-weight: 800;
+      font-style: normal;
+    }
+
+    .header {
+      background-color: #3b2f288e;
+      color: #333;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 40px;
+    }
+
+    .header .logo img {
+      height: 100px;
+    }
+
+    .header .nav-container {
+      display: flex;
+      flex-grow: 1;
+      justify-content: center;
+    }
+
+    .header .nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .header .nav a {
+      color: #000000;
+      text-decoration: underline;
+      font-size: 30px;
+    }
+
+    .header .login {
+      display: flex;
+      align-items: center;
+    }
+
+    .header .login a {
+      color: #000000;
+      text-decoration: underline;
+      font-size: 30px;
+      display: flex;
+      align-items: center;
+    }
+
+    .header .login a img {
+      margin-left: 10px;
+      height: 30px;
+      width: 30px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 0.5fr 0.5fr;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .large-box {
+      grid-column: span 1;
+      position: relative;
+      border-radius: 30px;
+    }
+
+    .medium-box {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+
+    .large-box h2, .medium-box h2 {
+      margin: 0;
+      font-size: 2.5em;
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+      color: #1f613fa1;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+    }
+
+    .large-box img, .medium-box img {
+      width: 100%;
+      height: 100%;
+      border-radius: 30px;
+    }
+
+    .search-bar {
+      padding: 20px;
+      background-color:#EADDCA;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      width: 100%; 
+      margin: 0 auto; 
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #d98453;
+      border-radius: 20px;
+      font-family: "bubblegum-pop-highlight", sans-serif;
+      font-weight: 500;
+      font-style: normal;
+      color:#3b2f288e;
+      background-color: #EADDCA;
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    
+    }
+
+    .sidebar .box {
+      height: 100px;
+      background-color:#4d6c476b;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+      color: #333;
+      text-decoration: none;
+      border: 1px solid #d98453;
+      border-radius: 50px;
+    }
+
+    .main-content {
+      display: grid;
+      grid-template-rows: 0.5fr 0.5fr;
+      gap: 10px;
+    }
+
+    .bottom-content {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .bottom-content .box {
+      flex: 1;
+      background-color: #4d6c476b;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      border: 1px solid #d98453;
+    }
+
+    .bottom-content .box img {
+      width: 100%;
+      height: auto;
+    }
+
+    .bottom-content .box h2 {
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+
+    .bottom-content .box p {
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    .sidebar .trending-recipes {
+      text-align: center;
+      font-size: 2em; 
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .footer {
+      background-color: #3b2f28b2;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: #c1af9f;
+      text-decoration: none;
+      font-size: 16px;
+      font-family: "bubblegum-pop-highlight", sans-serif;
+    }
+
+    .newsletter {
+      display: flex;
+      gap: 10px;
+    }
+
+    .newsletter input {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-family: "bubblegum-pop-highlight", sans-serif;
+      font-size: 16px;
+    }
+
+    .newsletter button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #d98453;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      font-family: "bubblegum-pop-highlight", sans-serif;
+    }
+
+    .newsletter button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="Official Nomz Logo.png" alt="NOMZ Logo">
+    </div>
+    <div class="nav-container">
+      <nav class="nav">
+        <a href="#">Share+</a>
+        <a href="#">Explore</a>
+        <a href="#">Help</a>
+      </nav>
+    </div>
+    <div class="login">
+      <a href="#">Log In <img src="profile icon.png" alt="Profile Icon"></a>
+    </div>
+  </header>
+  
+  <div class="container">
+    <div class="large-box">
+      <img src="salmon.avif" alt="Salmon dish">
+      <h2><a href="#">Recipe of the Week</a></h2>
+    </div>
+    <div class="main-content">
+      <div class="medium-box">
+        <img src="burek.jpeg" alt="Bosnian pastry Burek">
+        <h2><a href="#">Recipe Videos</a></h2>
+      </div>
+      <div class="medium-box">
+        <img src="tteokbokkiii.jpg" alt="korean dish tteokbokki">
+        <h2><a href="#">5 mins</a></h2>
+      </div>
+    </div>
+    <aside class="sidebar">
+      <div class="trending-recipes">Trending Recipes</div>
+      <a href="#" class="box">The best Sunday roast</a>
+      <a href="#" class="box">Peruvian beef empanadas</a>
+      <a href="#" class="box">Sichuan Spicy Fish Stew 水煮魚</a>
+      <a href="#" class="box">Arroz Congri (Cuban black beans and rice)</a>
+      <a href="#" class="box">Pastéis de Bacalhau</a>
+      <a href="#" class="box">Goat Egusi stew with fufu</a>
+      <a href="#" class="box">Moussaka </a>
+      <a href="#" class="box">English Rhubarb Crumble</a>
+    </aside>
+  </div>
+  
+  <div class="search-bar">
+    <input type="text" placeholder="Search based on ingredients...">
+  </div>
+
+  <h1> Recipe Globe <h2>
+  <!-- Styles -->
+  <style>
+    #chartdiv {
+      width: 100%;
+      height: 500px;
+      max-width: 100%;
+    }
+  </style>
+  
+  <!-- Resources -->
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+  
+  <!-- Chart code -->
+  <script>
+    am5.ready(function() {
+  
+      // Create root element
+      // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+      var root = am5.Root.new("chartdiv");
+  
+      // Set themes
+      // https://www.amcharts.com/docs/v5/concepts/themes/
+      root.setThemes([
+        am5themes_Animated.new(root)
+      ]);
+  
+      // Create the map chart
+      // https://www.amcharts.com/docs/v5/charts/map-chart/
+      var chart = root.container.children.push(am5map.MapChart.new(root, {
+        panX: "rotateX",
+        panY: "rotateY",
+        projection: am5map.geoOrthographic(),
+        paddingBottom: 20,
+        paddingTop: 20,
+        paddingLeft: 20,
+        paddingRight: 20
+      }));
+  
+      // Create main polygon series for countries
+      // https://www.amcharts.com/docs/v5/charts/map-chart/map-polygon-series/
+      var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
+        geoJSON: am5geodata_worldLow
+      }));
+  
+      polygonSeries.mapPolygons.template.setAll({
+        tooltipText: "{name}",
+        toggleKey: "active",
+        interactive: true
+      });
+  
+      polygonSeries.mapPolygons.template.states.create("hover", {
+        fill: root.interfaceColors.get("primaryButtonHover")
+      });
+  
+      // Create series for background fill
+      // https://www.amcharts.com/docs/v5/charts/map-chart/map-polygon-series/#Background_polygon
+      var backgroundSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {}));
+      backgroundSeries.mapPolygons.template.setAll({
+        fill: root.interfaceColors.get("alternativeBackground"),
+        fillOpacity: 0.1,
+        strokeOpacity: 0
+      });
+      backgroundSeries.data.push({
+        geometry: am5map.getGeoRectangle(90, 180, -90, -180)
+      });
+  
+      // Create graticule series
+      // https://www.amcharts.com/docs/v5/charts/map-chart/graticule-series/
+      var graticuleSeries = chart.series.push(am5map.GraticuleSeries.new(root, {}));
+      graticuleSeries.mapLines.template.setAll({ strokeOpacity: 0.1, stroke: root.interfaceColors.get("alternativeBackground") });
+  
+      // Rotate animation
+      chart.animate({
+        key: "rotationX",
+        from: 0,
+        to: 360,
+        duration: 30000,
+        loops: Infinity
+      });
+  
+      // Make stuff animate on load
+      chart.appear(1000, 100);
+    }); // end am5.ready()
+  </script>
+  
+  <!-- HTML -->
+  <div id="chartdiv"></div>
+  
+  <h1> Spotlight on Diet Recipes</h1>
+  <div class="bottom-content">
+    <div class="box">
+      <img src="vegetarian samosas.jpg" alt="vegetarian samosas">
+      <h2>Vegetarian Samosas (V)</h2>
+      <p>Delectable samosas with a side of mint cilantro chutney.</p>
+      <a href="#">Read more</a>
+    </div>
+    <div class="box">
+      <img src="Creamy-Tom-Yum-Noodle-Soup.jpg" alt="Thai creamy Tom Yum soup with noodles">
+      <h2>Creamy Tom Yum Goong (P)</h2>
+      <p>Thai hot and sour fish soup, spicy and aromatic!</p>
+      <a href="#">Read more</a>
+    </div>
+    <div class="box">
+      <img src="keto-breakfast.jpeg" alt="Keto breakfast pancakes">
+      <h2>Keto crepes</h2>
+      <p>Made with almond flour, cream cheese and eggs. So buttery and soft!</p>
+      <a href="#">Read more</a>
+    </div>
+    <div class="box">
+      <img src="veganwraps.jpg" alt="Vegan Wraps with tofu and hoummous">
+      <h2>Vegan tofu and hoummous wraps (VG)</h2>
+      <p>Balsamic vinegar marinated tofu and crunchy veg are a match made in heaven.</p>
+      <a href="#">Read more</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="#">About Us</a>
+      <a href="#">Help</a>
+      <a href="#">Community</a>
+    </div>
+    <div class="newsletter">
+      <input type="email" placeholder="Subscribe to our newsletter">
+      <button type="button">Subscribe</button>
+    </div>
+  </footer>
+</body>
+</html>
